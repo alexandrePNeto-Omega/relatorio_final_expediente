@@ -1,30 +1,11 @@
-
-
-# from extensions.interface.interface import tk
+from views.util.ultil_view import UtilView
 
 
 class MainView():
 
     def __init__(self):
-
+        self.util = UtilView()
         self.__tela_config()
-
-
-    def quebra_linhas(self, quantidade_cima, quantiade_baixo):
-        '''Automatiza a criação dos espaços'''
-        
-
-        for espaco in range(quantidade_cima):
-
-            print("\n")
-
-        print("------------------------------------------------")
-
-
-        for espaco in range(quantiade_baixo):
-
-            print("\n")
-
 
     def __valida_operacao(self, operacoes_validas_list, operacao_usuario):
 
@@ -45,23 +26,30 @@ class MainView():
 
             return
 
-
     def __tela_config(self):
 
-        self.quebra_linhas(1, 1)
+        self.util.quebra_linhas(1, 1)
 
         print("Bem-vindo a o gerador de relatório Omega!\n")
-
         print("Quais das seguintes operações dejesa realiza?\n")
-
         print("1 - .txt\n2 - .pdf\n3 - Numvem\n")
 
         operaco_user = int(input(" => "))
 
-
         self.__valida_operacao([1, 2, 3], operaco_user)
 
 
-        case
+        match operaco_user:
+            case 1:
+                from views.text_file.TextFileConsole \
+                    import TextFileConsoleView
 
-        self.quebra_linhas(1, 1)
+                TextFileConsoleView.main_view()
+            case 2:
+                None
+            case 3:
+                None
+            case _:
+                print("Operação inesperada")
+
+        self.util.quebra_linhas(1, 1)
