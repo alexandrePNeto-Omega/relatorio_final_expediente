@@ -38,13 +38,12 @@ class MainView():
 
         self.__valida_operacao([1, 2, 3], operaco_user)
 
-
         match operaco_user:
             case 1:
                 from views.text_file.TextFileConsole \
                     import TextFileConsoleView
 
-                TextFileConsoleView.main_view()
+                TextFileConsoleView().main_view()
             case 2:
                 None
             case 3:
