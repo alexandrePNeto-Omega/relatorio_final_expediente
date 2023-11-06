@@ -1,10 +1,51 @@
-from views.util.ultil_view import UtilView
+from views.util.ultil_view import UtilViewConsole
+from views.util.ultil_view import UtilViewDesktop
+
+import customtkinter
+
+from customtkinter import CTk
+from customtkinter import CTkEntry
+from customtkinter import CTkLabel
+from customtkinter import CTkButton
+
+#   self.window.attributes("-disabled", True)
+#   self.window.state("zoomed")
+#   -alpha, -transparentcolor, -disabled, -fullscreen, -toolwindow, or -topmost
+
+class MainViewDesktop():
+    def __init__(self):
+        self.window = CTk()
+        self.__configura_janela()
+        self.__configura_layout()
+        self.window.mainloop()
+
+    def __configura_janela(self):
+        self.window.title("Login")
+        self.window.geometry("400x500")
+        self.window.resizable(False, False)
+
+    def __configura_layout(self):
+
+        #   Criar um método no util para fazer isso automático
+
+        login_label = CTkLabel(
+            master=self.window,
+            text="Login"
+        )
+        login_label.place(x=100, y=125)
+
+        login_user = CTkEntry(
+            master = self.window,
+            placeholder_text = "Informe seu usuário",
+            width = 200
+        )
+        login_user.place(x=100, y=150)
 
 
-class MainView():
+class MainViewConsole():
 
     def __init__(self):
-        self.util = UtilView()
+        self.util = UtilViewConsole()
         self.__tela_config()
 
     def __valida_operacao(self, operacoes_validas_list, operacao_usuario):

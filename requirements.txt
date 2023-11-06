@@ -1,3 +1,5 @@
-tkinter
+tk
 psycopg2
 reportlab
+packaging
+customtkinter

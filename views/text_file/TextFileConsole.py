@@ -4,11 +4,11 @@ import time
 from models.StatusModel import STATUS
 from models.TopicoModel import TOPICO_CONSOLE_LIST
 
-from views.util.ultil_view import UtilView
+from views.util.ultil_view import UtilViewConsole
 
 class TextFileConsoleView():
     def __init__(self):
-        self.util = UtilView()
+        self.util = UtilViewConsole()
 
     def main_view(self):
 
